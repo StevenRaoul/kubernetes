@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: beaver
+spec:
+  selector:
+    matchLabels:
+      app: beaver
+  template:
+    metadata:
+      labels:
+        app: beaver
+    spec:
+      containers:
+      - name: beaver
+        image: dbeaver/cloudbeaver:25.1.2
+        env:
+          - name: CB_ADMIN_NAME
+            value: admin
+          - name: CB_ADMIN_PASSWORD
+            value: admin

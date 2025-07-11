@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: beaver
+spec:
+  rules:
+  - host: stevenbeaver.intech.levitt.fr
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: beaver
+            port: 
+              number: 80
